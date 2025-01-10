@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-yellow{
+            background-color: rgb(255, 217, 0);
+        }
+    </style>
+</head>
+<body>
+    <p>p1</p>
+    <p class="my-class">p2</p>
+    <p class="my-class">p3</p>
+    <p class="my-class">p4</p>
+
+    <p id="one">p5</p>
+    <button id="changeBtn">change</button>
+    <button id="changeBtn2">change2</button>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        /*
+            change 버튼을 눌렀을 때 id 가 one 인 요소의 
+            1. innerText 를 "changed"
+            2. 글자의 색을 "red"
+            3. "bg-yellow" 클래스 추가
+            하기
+        */
+
+        document.querySelector("#changeBtn").addEventListener("click",()=>{
+            document.querySelector("#one").innerText = "changed!";
+            document.querySelector("#one").style.color = "red";
+            document.querySelector("#one").className = "bg-yellow";
+        });
+
+        $("#changeBtn2").on("click",()=>{
+            $("one").text("changed!").css("color","red").addClass("bg-yellow");
+        });
+
+    </script>
+</body>
+</html>
