@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>버튼</legend>
+            <label>
+                <button id="id_d">기본 버튼</button>
+                <button id="id_j">JQuery 버튼</button>    
+            </label>
+        </fieldset>
+    </div>
+
+    <div class="container">
+        <fieldset>
+            <legend>InnerText</legend>
+            <label>
+                <div><p id="title_d">id_d 버튼: </p> <p id="id_d_msg"></p></div>
+                <div><p id="title_j">id_j 버튼: </p> <p id="id_j_msg"></p></div>
+            </label>
+        </fieldset>
+    </div>
+
+    <div class="container">
+        <fieldset>
+            <legend>li 추가하기</legend>
+            <label>
+                <ul id="id_d_li">
+                </ul>
+                <ul id="id_j_li">
+                </ul>
+            </label>
+        </fieldset>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        document.querySelector("#id_d").addEventListener("click",()=>{
+            console.log("id_d Button is Clicked!");
+            
+            document.querySelector("#id_d_msg").innerText = "기본 이벤트 리스너 호출";
+            
+            const li = document.createElement("li");
+            li.innerText = "기본 리스트";
+            document.querySelector("#id_d_li").append(li);
+
+            document.querySelector("#title_d").className="color_d";
+
+            const rgb = ranRGB();
+            document.querySelector(".color_d").style.color = "rgb("+rgb[0]+","+rgb[1]+","+rgb[2]+")";
+        });
+
+
+        $("#id_j").on("click",()=>{
+            console.log("id_q Button is Clicked!!");
+
+            $("#id_j_msg").text("Jquery 이벤트 리스너 호출");
+
+            $("<li>").text("JQuery 리스트").appendTo("#id_j_li");
+
+            $("#title_j").addClass("color_j");
+
+
+            const rgb = ranRGB();
+            $(".color_j").css("color","rgb("+rgb[0]+","+rgb[1]+","+rgb[2]+")");
+        });
+
+        const ranRGB = function(){
+            const r = parseInt(Math.random()*256);
+            const g = parseInt(Math.random()*256);
+            const b = parseInt(Math.random()*256);
+
+            return [r,g,b];
+        };
+
+
+
+    </script>
+</body>
+</html>
