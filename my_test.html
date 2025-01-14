@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -35,6 +40,28 @@
                 <ul id="id_j_li">
                 </ul>
             </label>
+        </fieldset>
+    </div>
+
+    <div class="container">
+        <fieldset>
+            <legend>Each Box</legend>
+            <p>일반 JavaScript 로 작동</p>
+            <div class="wrapper" style="display: flex;">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+                <div class="box">box4</div>
+                <div class="box">box5</div>
+            </div>
+            <p>Jquery 로 작동</p>
+            <div class="wrapper" style="display: flex;">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+                <div class="box">box4</div>
+                <div class="box">box5</div>
+            </div>
         </fieldset>
     </div>
     
@@ -71,11 +98,13 @@
             $(".color_j").css("color","rgb("+rgb[0]+","+rgb[1]+","+rgb[2]+")");
         });
 
+
+
+
         const ranRGB = function(){
             const r = parseInt(Math.random()*256);
             const g = parseInt(Math.random()*256);
             const b = parseInt(Math.random()*256);
-
             return [r,g,b];
         };
 
