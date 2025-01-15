@@ -7,6 +7,7 @@
     <style>
         .wrapper{
             display: flex;
+            /* flex-direction: column; */
         }
         .box{
             width: 100px;
@@ -27,8 +28,10 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script>
-
+        // 클래스명이 box 인 요소에 "click" 이벤트가 발생할 때 실행할 함수 등록
         $(".box").on("click",(e)=>{
+            // event.target 은 "click" 이벤트가 일어난 바로 그 요소의 참조값이다.
+            // event.target 을 $() 함수에 넣었기 때문에 jQuery의 동작을 사용할 수가 있다.
            $(e.target).text("clicked!!!").css("backgroundColor","green");
         });
         

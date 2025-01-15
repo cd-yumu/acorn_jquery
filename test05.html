@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test05.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 225, 0);
+            border: 1px solid rgba(255, 0, 0, 0.665);
+        }
+    </style>
+</head>
+<body>
+    <button id="addBtn">Add Class</button>
+    <button id="removeBtn">Remove Class</button>
+    <button id="toggleBtn">Toggle Class</button>
+    <div id="myBox">box</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $("#addBtn").on("click",()=>{
+            $("#myBox").addClass("box");
+        });
+        $("#removeBtn").on("click",()=>{
+            $("#myBox").removeClass("box");
+        });
+        $("#toggleBtn").click(()=>{
+            $("#myBox").toggleClass("box");
+        });  // 함수명이 이벤트명으로도 다 되어 있다.
+    </script>
+</body>
+</html>
